@@ -6,16 +6,15 @@ https://sfghf.org/events/hearts-in-sf/
 
 ## How can I build it?
 
-It's supposed here that you have `Golang`, `Node.JS` and `yarn` instllaed on your computer. First of all you need to creare new React application. It's not delivered as part of the source code to be sure that latest version of `create-react-app`. So, clone the project and create test app:
+It's supposed here that you have `Golang`, `Node.JS` and `yarn` instllaed on your computer. First of all you need to creare new React application. It's not delivered as part of the source code to be sure that latest version of `create-react-app`. So, clone the project:
 
 ```
  mkdir -p $GOPATH/src/github.com/jwonsever/heartfinder
  cd $GOPATH/src/github.com/jwonsever/heartfinder
  git clone https://github.com/jwonsever/heartfinder.git .
- npx create-react-app ui
 ```
 
-Ok, now we have our test project. Let's install it's dependencies and build it:
+Ok, now we have our project. Let's install it's dependencies and build it:
 
 ```
  cd $GOPATH/src/github.com/jwonsever/heartfinder/ui
