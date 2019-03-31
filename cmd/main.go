@@ -43,6 +43,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.Handle(buildURL, http.StripPrefix(buildURL, http.FileServer(http.Dir(buildPath))))
 	mux.Handle("/api", api.Handler())
+	mux.Handle("/api/hearts", api.PostHandler())
 	mux.Handle("/", server.Handler(buildPath))
 
 	srv := &http.Server{
