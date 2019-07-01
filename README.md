@@ -1,4 +1,6 @@
 # Heartfinder
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FJwonsever%2Fheartfinder.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FJwonsever%2Fheartfinder?ref=badge_shield)
+
 
 This is a project built using Go, Postgres, and Create-React-App.  It's a "blog" like website letting people post pictures and locations for the Hearts in San Francisco project.
 
@@ -53,3 +55,6 @@ And visit the web page:
 ## License
 
 Please, take a look at the [LICENSE](https://github.com/jwonsever/heartfinder/blob/master/LICENSE) file for details about this aspect of the project.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FJwonsever%2Fheartfinder.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FJwonsever%2Fheartfinder?ref=badge_large)
