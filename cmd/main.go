@@ -14,7 +14,6 @@ import (
 	_ "github.com/lib/pq"
 
 	"github.com/jwonsever/heartfinder/api"
-	"github.com/jwonsever/heartfinder/server"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
@@ -24,12 +23,14 @@ func main() {
 	cfg := struct {
 		BuildPath string
 		Listen    string
+		DB        string
 	}{}
 
 	kp := kingpin.New(filepath.Base(os.Args[0]), "Demo of create-react-app intergration into golang http server")
 	kp.Version(version)
 	kp.Flag("listen", "Which address should be listened").Required().StringVar(&cfg.Listen)
-	kp.Flag("build", "Path to the build directory of the project created using create-react-app").Required().StringVar(&cfg.BuildPath)
+	kp.Flag("build", "Path to the build directory of the project created using create-react-app").StringVar(&cfg.BuildPath)
+	kp.Flag("db", "Database configuration").Required().StringVar(&cfg.DB)
 	kp.HelpFlag.Short('h')
 
 	if _, err := kp.Parse(os.Args[1:]); err != nil {
@@ -44,7 +45,9 @@ func main() {
 	mux.Handle(buildURL, http.StripPrefix(buildURL, http.FileServer(http.Dir(buildPath))))
 	mux.Handle("/api", api.Handler())
 	mux.Handle("/api/hearts", api.PostHandler())
-	mux.Handle("/", server.Handler(buildPath))
+
+	//I dont need this
+	//mux.Handle("/", server.Handler(buildPath))
 
 	srv := &http.Server{
 		Addr:    cfg.Listen,

@@ -55,6 +55,8 @@ func Handler() http.HandlerFunc {
 			return
 		}
 
+		//Todo self
+		res.Header().Set("Access-Control-Allow-Origin", "*")
 		res.WriteHeader(200)
 		res.Write(body)
 	}
