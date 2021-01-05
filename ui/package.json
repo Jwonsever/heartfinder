@@ -5,7 +5,7 @@
   "private": true,
   "homepage": "http://jwonsever.com/hearts",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
